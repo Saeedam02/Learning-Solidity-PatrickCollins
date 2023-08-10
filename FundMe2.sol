@@ -24,9 +24,32 @@ contract FundMe {
         for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex=funderIndex +1) {
             address funder= funders[funderIndex];
             addressToAmountFunded[funder] = 0;
-
         }
+        // reset the array
+        funders = new address[](0); // we yse the new keyword to reset the funders array to a blank address array
+        
+        // withdraw the funds. there are three way: transfer- send- call
+        
+        //transfer
+        //msg.sender is address
+        //payable(msg.sender) is payable address
+        payable(msg.sender).transfer(address(this).balance); // it automativally revert if the transfer fails.
+        // disadvantages of method: if the line fails it will error and revert the transaction.
 
+
+        //send : if the line fails it won't error, it will return a boolean whether or not it was successful.
+        bool sendSuccess=payable(msg.sender).send(address(this).balance); //it will only revert the transaction if we add require statement.
+        require(sendSuccess,"Send faile"); // if the above line fails, we will still revert by adding our require statement.
+
+        // call : a powerful func and we can use it to call virtually any funcs in all of ethereum without even having to have the ABI 
+        // call(" this is where we will put any func information ") and if we don't want to call a func, we leave it like call("")
+        // call func actually returns two variables. for showing taht we put() in the left hand of the following command:
+        //if calling func was success the boolean will be true and if called func returned data it will be in dadareturned
+        //since bytes objects are arrays, data returns need to be in memory
+        //(bool callSuccess, bytes memory dataReturned)=payable(msg.sender).call{value:address(this).balance}(""); 
+        // since we don't call a func we leave the comma for datareturned like:
+        (bool callSuccess, )=payable(msg.sender).call{value:address(this).balance}("");
+        require(callSuccess, " call failed");
     }
 
 }
