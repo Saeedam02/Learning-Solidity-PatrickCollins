@@ -6,6 +6,10 @@ import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/Ag
 contract Fundme {
    
    uint256 public minimumusd=5e18;
+    address[] public funders;
+    //mapping(address => uint256) public addressToAmountFunded;
+    //also we can use the following way to mapping:
+    mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
 
     // be used to call to send money to our contract
     // payable keyword makes the function to look red in the remix ui
@@ -18,8 +22,17 @@ contract Fundme {
        
         require(getConversionRate(msg.value)>=minimumusd,"didn't send enough ETH"); //1e18 means 1 ETH= 100000000000000000000 wei
         // in the above message, it says that is the first part is false then go ahead and revert the second section.
-        
-    }   
+        funders.push(msg.sender); // this refers to whoever call this function
+        addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;
+   
+   
+    }
+
+    // for foloowing part of program we can use library which is used in Fundme2.sol
+    //Libraries are similar to contracts, but you can't declare any state variable and you can't send ether.
+    //A library is embedded into the contract if all library functions are internal.
+    //Otherwise the library must be deployed and then linked before the contract is deployed.
+
 
     function getPrice() public view returns(uint256) {
         //Address 0x1a81afB8146aeFfCFc5E50e8479e826E7D55b910
