@@ -1,0 +1,5 @@
+Need to read:
+https://docs.soliditylang.org/en/v0.8.21/
+https://docs.chain.link/data-feeds/using-data-feeds
+https://solidity-by-example.org/library/
+

@@ -2,8 +2,8 @@
 pragma solidity ^0.8.18;
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
-
-contract Fundme {
+// in fundme2.sol we use PriceConvertor and library instead of some functions.
+contract FundMe {
    
    uint256 public minimumusd=5e18;
     address[] public funders;
@@ -28,7 +28,7 @@ contract Fundme {
    
     }
 
-    // for foloowing part of program we can use library which is used in Fundme2.sol
+    // for foloowing part of program we can use library which is used in PriceConvertor.sol
     //Libraries are similar to contracts, but you can't declare any state variable and you can't send ether.
     //A library is embedded into the contract if all library functions are internal.
     //Otherwise the library must be deployed and then linked before the contract is deployed.
