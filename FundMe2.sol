@@ -17,6 +17,8 @@ contract FundMe {
 
     }
     function withdraw() public {
+        // the following line is for the aim that just owner can call this func
+        require(msg.sender == owner , "Must be owner!");
         //for loop
         // [1,2,3,4] elements
         //for(/*starting index,ending index, step amount */)
@@ -50,6 +52,18 @@ contract FundMe {
         // since we don't call a func we leave the comma for datareturned like:
         (bool callSuccess, )=payable(msg.sender).call{value:address(this).balance}("");
         require(callSuccess, " call failed");
+    }
+
+    //in this way everybody can call the withdraw func and transfer the money. 
+    //in solidity, there is a keyword and special func named Constructor for this aim.
+    //since we want this withdraw func to be able to be called by the owner of this contract,
+    //in our constructor we can set up an address right away.
+    address public owner;
+    //after setting up the owner now we must change the withdraw func till just owner can call it.
+    constructor (){
+
+        owner = msg.sender; 
+         
     }
 
 }
