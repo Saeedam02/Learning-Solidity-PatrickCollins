@@ -44,6 +44,7 @@ contract FundMe {
 
         (bool callSuccess, )=payable(msg.sender).call{value:address(this).balance}("");
         require(callSuccess, " call failed");
+        // we can actually go ahead and revert any transaction or any function call in the middle of the function call.
     }
 
     address public immutable i_owner;
@@ -63,4 +64,20 @@ contract FundMe {
         if(msg.sender != i_owner) { revert NotOwner();}      
         _; 
     }
+    // what happens if some one sends this contract ETH without calling the fund function? related to Receive and Fallback
+    // there is a way for when people send money to this contract or people call a function that doesn't exist for us to still trigger some code.
+    //there are two special functions in Solidity:
+    // receive()
+    //fallback()
+    // go into the FallbackExample.sol
+
+    receive() external payable {
+
+        fund();
+    }
+    fallback() external payable {
+        fund();
+    }
+    //now if some body send us money accidentally without calling our fund function, it will still automatically route them over to the fund function.
+    // it means if somebody doesn't send us enough funding, it will that transaction will still get reverted.
 }

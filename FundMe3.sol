@@ -52,3 +52,6 @@ contract FundMe {
 
     }
 }
+// here we are going to learn some advance solidity, immutable and constants
+// these are going to be fantastic for saving gas, making your code look a lot cleaner.
+// go into the fundme4.sol for advance solidity.
