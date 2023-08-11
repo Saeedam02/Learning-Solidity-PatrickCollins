@@ -3,3 +3,23 @@ https://docs.soliditylang.org/en/v0.8.21/
 https://docs.chain.link/data-feeds/using-data-feeds
 https://solidity-by-example.org/library/
 
+
+
+One of the most commen libraries that was ysed for a long time is SafeMath.sol:
+https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/utils/math
+
+for withdraw the money by transfer method :
+https://solidity-by-example.org/sending-ether/
+
+
+#note that unchecked key word makes your code a little bit more gas efficient
+
+for custom errors :
+https://soliditylang.org/blog/2021/04/21/custom-errors/
+
+for receive and fallback:
+https://docs.soliditylang.org/en/v0.8.13/contracts.html?#receive-ether-function
+
+for check out the details of the transaction of our contract :
+https://etherscan.io/address/0xf094D1fB5083c6c55f804954917AA5FFA6041906
+
