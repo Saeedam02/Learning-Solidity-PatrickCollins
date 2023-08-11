@@ -8,19 +8,27 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
+						"internalType": "address",
+						"name": "funder",
+						"type": "address"
+					}
+				],
+				"name": "addressToAmountFunded",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "_favnum",
+						"name": "amountFunded",
 						"type": "uint256"
 					}
 				],
-				"name": "addperson",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fund",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -31,17 +39,12 @@
 						"type": "uint256"
 					}
 				],
-				"name": "listofpeople",
+				"name": "funders",
 				"outputs": [
 					{
-						"internalType": "uint256",
-						"name": "favnum",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "nmae",
-						"type": "string"
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -50,12 +53,12 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "ethAmount",
+						"type": "uint256"
 					}
 				],
-				"name": "nametofavnum",
+				"name": "getConversionRate",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -68,25 +71,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "pat",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "favnum",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "nmae",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "retrieve",
+				"name": "getPrice",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -98,16 +83,29 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "getVersion",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "_favoriteNumber",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "store",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minimumusd",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -124,7 +122,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SimpleStorage1.sol": "SimpleStorage"
+			"FundMe1.sol": "Fundme"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -138,12 +136,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"SimpleStorage1.sol": {
-			"keccak256": "0x0bef4665ffb2f9519ac1c56dc7dba0963ddac8f18bb8690a06a6006686b71cf5",
+		"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x6e6e4b0835904509406b070ee173b5bc8f677c19421b76be38aea3b1b3d30846",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://97352afaa811fa19de2d3bca6f84c81af1a4a509c2479c74cfc15fe46ef4ef32",
-				"dweb:/ipfs/QmfEx8AHePoTgcoBxjW3h2QcPmZqXs1s8tGrXJn3AyHU6B"
+				"bzz-raw://b3beaa37ee61e4ab615e250fbf01601ae481de843fd0ef55e6b44fd9d5fff8a7",
+				"dweb:/ipfs/QmeZUVwd26LzK4Mfp8Zba5JbQNkZFfTzFu1A6FVMMZDg9c"
+			]
+		},
+		"FundMe1.sol": {
+			"keccak256": "0xaa3dcc06b5603d829a1e8944752f94f7eefda04429329d63d59b51deb9f2dc97",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9a65b061fdce25cf08577e265e21186e49186ea8b037430e031f7751f81460b1",
+				"dweb:/ipfs/QmeFDt2p8JfFvZAvZq8QP6NPq1RFEL8THSj4TcneZzf69b"
 			]
 		}
 	},

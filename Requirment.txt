@@ -1,3 +1,6 @@
+Remix is an IDE : Integrated Development Environment
+
+
 Need to read:
 https://docs.soliditylang.org/en/v0.8.21/
 https://docs.chain.link/data-feeds/using-data-feeds
@@ -23,3 +26,40 @@ https://docs.soliditylang.org/en/v0.8.13/contracts.html?#receive-ether-function
 for check out the details of the transaction of our contract :
 https://etherscan.io/address/0xf094D1fB5083c6c55f804954917AA5FFA6041906
 
+here the github repo for asking questions:
+https://github.com/Cyfrin/foundry-full-course-f23
+
+here a other websites for asking questions:
+https://peeranha.io/
+https://web3education.dev/
+
+*******************
+the good format for asking questions"
+describe what are you doing and what's the issue then
+
+here is my error:
+'''
+type all part of error
+'''
+
+here is my code:
+'''
+name of the programming language which you are using
+tpye your code
+'''
+********************
+
+don't forget to check out the speedrun ethereum.com and see Austin Griffin's videos related to that
+
+*************************************
+now we are moving to Foundry , a proffesional smart contract framework, similar to hard hat(Javascript based) or brownie(python based).
+foundry is solidity based.
+it's famous because of its speed.
+
+https://getfoundry.sh
+
+In remix we do lot of stuff manually ( testing or deploying ,...)
+if we change 10 function,in remix, we must test all 10 functions till we make sure that they are working or not.
+for security and auditing, foundry is the most popular tool amongst Auditors
+
+in frrecodecamp in YouTube, watch the Bash scripting tutorial for biginners

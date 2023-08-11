@@ -98,10 +98,23 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "sayhello",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_favoriteNumber",
+						"name": "_newNumber",
 						"type": "uint256"
 					}
 				],
@@ -124,7 +137,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SimpleStorage1.sol": "SimpleStorage"
+			"AddFiveStorage.sol": "AddFiveStorage"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -138,6 +151,14 @@
 		"remappings": []
 	},
 	"sources": {
+		"AddFiveStorage.sol": {
+			"keccak256": "0x4a37027410853cdb1220cb4a8dd649207c450714dfb882b36352c7c302e60e89",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0e652167826332b09d6f5da3b4afad86a45ed56311370d601f983d7a9f77b15f",
+				"dweb:/ipfs/QmXenHc1hzTS9QKWgfGmbNoDifhCgMuRAZKtNyMcDkyZBx"
+			]
+		},
 		"SimpleStorage1.sol": {
 			"keccak256": "0x0bef4665ffb2f9519ac1c56dc7dba0963ddac8f18bb8690a06a6006686b71cf5",
 			"license": "MIT",
