@@ -12,6 +12,7 @@ import {PriceConverter} from "./PriceConverter.sol";
 // variables taht we set one time but outside of the same line that they are declared and we set them like in the constructor, we can mark as immutable,
 // typically a good convention for marking immutable variables is going to be doing : i_name of the variable
 
+error NotOwner();
 
 contract FundMe {
     using PriceConverter for uint256;
@@ -51,9 +52,15 @@ contract FundMe {
 
         i_owner = msg.sender; 
     }
-    
+
+
+    // other way to make our contract to be gas efficient is updating our requires right now with our require statement.
+    // we need to store the sentence *sender is not the owner* as a string array every single one of these characters in this error log needs to get stored individually
+    // check the custom error link in requirement.txt
+    //so instead of all require we can create a custom error
     modifier onlyowner() {
-        require(msg.sender== i_owner," sender is not the owner");
+        //require(msg.sender== i_owner," sender is not the owner");
+        if(msg.sender != i_owner) { revert NotOwner();}      
         _; 
     }
 }
