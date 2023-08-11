@@ -65,5 +65,6 @@ contract FundMe {
         owner = msg.sender; 
          
     }
-
+// if we have lots of admins func, we don't want to copy past the  *require(msg.sender == owner , "Must be owner!");*
+//for all functions and owners. so in the fundme3 we add modifiers
 }

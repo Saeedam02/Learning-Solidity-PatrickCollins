@@ -29,12 +29,12 @@ contract FundMe {
      
         payable(msg.sender).transfer(address(this).balance); 
 
-        bool sendSuccess=payable(msg.sender).send(address(this).balance); //it will only revert the transaction if we add require statement.
-        require(sendSuccess,"Send faile"); // if the above line fails, we will still revert by adding our require statement.
+        // bool sendSuccess=payable(msg.sender).send(address(this).balance); //it will only revert the transaction if we add require statement.
+        // require(sendSuccess,"Send faile"); // if the above line fails, we will still revert by adding our require statement.
 
 
-        (bool callSuccess, )=payable(msg.sender).call{value:address(this).balance}("");
-        require(callSuccess, " call failed");
+        // (bool callSuccess, )=payable(msg.sender).call{value:address(this).balance}("");
+        // require(callSuccess, " call failed");
     }
 
     address public owner;
