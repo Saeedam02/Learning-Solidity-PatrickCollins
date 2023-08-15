@@ -111,4 +111,33 @@ then inter your private key
 
  now if you go in block section in Ganache you can see the new block
 
+ ****************
+ Deploying to a local blockchain (Scripting)
+
+ ## instead of doing the command line we're actually going to write a script for us to deploy our code.
+
+ for writing a script, for name of that we must use ".s.sol " after name of the program.
+
+ you can use : https://book.getfoundry.sh/tutorials/solidity-scripting
  
+ then you must write :
+ import "forge-std/Script.sol";
+ till the vscode knows that this is a script and start your code like:
+ contract DeploySimpleStorage is Script{}
+
+ ************
+ any transaction taht we want to send we must put it between :
+        vm.startBroadcast();
+        vm.stopBroadcast();
+
+*************
+
+For deploying it:
+forge script script/DeploySimpleStorage.s.sol 
+if we want to deploy in our chain:
+forge script script/DeploySimpleStorage.s.sol --rpc-url http://YOUR RPC
+
+***********************************************
+In Foundry, if you don't specify an RPC URL,it'll just automatically deploy your contract or run your script on a temporary Anvil chain.
+
+***********************************************
