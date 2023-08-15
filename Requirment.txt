@@ -193,3 +193,9 @@ cast send 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 "store(uint256)" 123 --rpc-
 cast call 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 "retrieve()"  -> it gets the hex value back
 if we use cast --to-base hex dec we can get the number which we give the store function
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+test net Demo 
+
+https://www.alchemy.com/
+we can sign up for a node as a service that we can actually send transactions to.
+Alchemy is the only scalable,reliable and accurate blockchain infrastructure.
