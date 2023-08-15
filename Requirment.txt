@@ -183,3 +183,13 @@ other way to deploy our contract is the third web drploy
 for this aim, use the follo=wing command in your vscode terminal:
 npx thirdweb deploy          ///// firstly, we must install node json from https://github.com/nodesource/distributions according to what version do we want to install.
 
+
+************************************
+now if we want to call a function from our contract:
+cast send 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 "store(uint256)" 123 --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+
+** cast send is related to orange boxs ic the remix and cast call is related to blue boxs in the remix
+
+cast call 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 "retrieve()"  -> it gets the hex value back
+if we use cast --to-base hex dec we can get the number which we give the store function
+
