@@ -70,3 +70,45 @@ we must install solidity and better toml for better using of foundry in VSCode.
 use ctrl+p for opening search section in VSCode and type " > " then type setting and go to the open users settings and search for the format on save and check the box till when you save your code, it will automatically check and reform your code format.
 ******************
 
+For compileing our code, we need to type " forge build or forge compile " in the vscode terminal.
+after compiling, some new folders come up. the have the same information which remix has.
+
+***********************
+Now it's time to deploying to a local blockchain like " Anvil or Ganache "
+
+Foundry comes built in with a virtual environment in the shell and by running anvil in terminal you will get an outputs.
+
+Ganache eth chain : https://trufflesuite.com/ganache/
+
+Ganache is a one click blockchainand it gives us a auser interface or an app for us to look at our transactions in an easier way.
+It gives us a account address with a private key. don't use it on public blockchain.
+
+for installing Ganache, after downloading it, type the following commands in terminal:
+chmod a+x ganache-2.7.1-linux-x86_64.AppImage
+sudo apt install fuse   
+./ganache-2.7.1-linux-x86_64.AppImage
+
+now go into your metamask account and go to settings then into networks and create a new network like sepolia:
+for RPC URL: if yoy're working with Ganache, there is a RPC server.in anvil there is a listening at the bottom.
+for chain ID, in anvil it is 31337 and in Ganache it is 1337
+currency symbol is going to be ETH 
+
+*******
+copy private key from Ganache and vlivk on import account in metamask and then you will have there some currency.
+*******
+
+***********************
+YOu need a connection to a node in order to send transactions.if yoou want to send transaction to your own node, you would run something like gath which is an execution
+client and then something maybe like techu a prism whoch is a consesnus client and send transaction there.
+^^^^try to run your own ethereum node. ^^^^
+
+***********************
+
+for deploying into a local clockchain, use forge --help in vscode terminal 
+use : forge create SimpleStorage --rpc-url http://127.0.0.1:7545 --interactive     
+then inter your private key
+*** note that never use your real private key in vscode
+
+ now if you go in block section in Ganache you can see the new block
+
+ 
