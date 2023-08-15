@@ -135,9 +135,46 @@ then inter your private key
 For deploying it:
 forge script script/DeploySimpleStorage.s.sol 
 if we want to deploy in our chain:
-forge script script/DeploySimpleStorage.s.sol --rpc-url http://YOUR RPC
-
+forge script script/DeploySimpleStorage.s.sol --rpc-url http://YOUR RPC --broadcast --private-key
 ***********************************************
 In Foundry, if you don't specify an RPC URL,it'll just automatically deploy your contract or run your script on a temporary Anvil chain.
 
-***********************************************
+**********************************************
+after deploying you can go into broadcast file in foundry-f23/foundry-simple-storage-f23 and go into run-latest.json and check out the transactions details.
+there is the hex value of the gas not amount of gas.
+
+
+**********
+you can use cast (it's bulit in foundray) to convert between hex and numbers.
+the command: cast --to-base hex dec 
+**********
+
+if our contract or function is payable, we can add value for it like:
+SimpleStorage simpleStorage = new SimpleStorage{value:ether}();
+
+there are rsv vakues allow our private key to sign the transaction.
+your nonce increments every time you send transaction.
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Patrick has a security course comming, don't forget watching it.
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+we don't want to paste our private key in plain text so what else can we do????
+We can put the private key and rpc url in the .env file and then put it in the gitignore .
+thenn run the " source .env" to put everything inside of .env into the shell
+
+after that we can use the following command:
+forge script script/DeploySimpleStorage.s.sol --rpc-url $RPC_URL --broadcast --private-key $PRIVATE_KEY
+
+there is a one more step to make this even more secure:
+there is an issue in the founfry repo right now called improve wallet management UX using Keystore.
+https://github.com/foundry-rs/foundry/issues/1869
+
+if you run forge script --help : you can see a section where you can actually pass a path to a encrypted keystore file and a password.
+Keystore is a file that has your private key but encrypted by a password.
+
+
+make sure that you're going to read the following :
+https://github.com/Cyfrin/foundry-full-course-f23/discussions/5
+
