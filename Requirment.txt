@@ -63,3 +63,10 @@ if we change 10 function,in remix, we must test all 10 functions till we make su
 for security and auditing, foundry is the most popular tool amongst Auditors
 
 in frrecodecamp in YouTube, watch the Bash scripting tutorial for biginners
+
+we must install solidity and better toml for better using of foundry in VSCode.
+
+******************
+use ctrl+p for opening search section in VSCode and type " > " then type setting and go to the open users settings and search for the format on save and check the box till when you save your code, it will automatically check and reform your code format.
+******************
+
