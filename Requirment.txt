@@ -178,3 +178,8 @@ Keystore is a file that has your private key but encrypted by a password.
 make sure that you're going to read the following :
 https://github.com/Cyfrin/foundry-full-course-f23/discussions/5
 
+//////////////////////////////////////////////////////////////
+other way to deploy our contract is the third web drploy
+for this aim, use the follo=wing command in your vscode terminal:
+npx thirdweb deploy          ///// firstly, we must install node json from https://github.com/nodesource/distributions according to what version do we want to install.
+
