@@ -1,0 +1,24 @@
+Lesson 7 : Foundry Fund Me
+
+You can use "forge test" command to run a test file in your terminal.
+When you initialize your file by forge init, it creates counter.sol codes in directories. you should delete them, because we gana write our own code and tests.
+
+////////
+In Remix we can import libraries or codes by for example:
+
+import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3
+
+remix automatically reaches out to the npm package repository. however foundry doesn't do this.
+we need to be very explicit and tell foundry exactly where we need to pull our dependencies from.
+we actually need to download that repository from github
+
+for the AggregatorV3Interface we can use: https://github.com/smartcontractkit/chainlink-brownie-contracts
+
+for installing all libraries which we need, use: forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit
+use @0.6.1 for the latest version 
+After installing, it will gives us a path for where we're actually installing that.
+But notice that we must tell foundry that @chainlink/contracts/ is refering to the lib folder. we need to create something called remapping.
+go to foundry.toml and create new section called remaooing.
+
+after doing all stuff, use forge build to compile.
+
