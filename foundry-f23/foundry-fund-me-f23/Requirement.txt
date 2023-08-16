@@ -20,5 +20,22 @@ After installing, it will gives us a path for where we're actually installing th
 But notice that we must tell foundry that @chainlink/contracts/ is refering to the lib folder. we need to create something called remapping.
 go to foundry.toml and create new section called remaooing.
 
-after doing all stuff, use forge build to compile.
+after doing all stuff, use forge build to compile. and there will be an out folder containing all compiled stuff.
+
+**********
+// the best way to named an error is starting with the name of the contract which is contains the error.
+error FundMe_NtOwner();
+**********
+
+################################ Test #############################
+the forge standard librarie has a couple of standard packages or standard contracts that we can use to make our test easier.
+
+from a test, we want to test that our contract is doing what we wnat to do or not.
+
+In all our tests, the first function is a setUp function and inside of that we're gana deploy our contract.
+
+Another way to test and debugging is something called console.log -> https://book.getfoundry.sh/reference/forge-std/console-log
+
+With command "forge test --vv" (vv stands for the visibility of logging in this test.it can be vv till vvvvv)
+
 
