@@ -36,6 +36,54 @@ In all our tests, the first function is a setUp function and inside of that we'r
 
 Another way to test and debugging is something called console.log -> https://book.getfoundry.sh/reference/forge-std/console-log
 
-With command "forge test --vv" (vv stands for the visibility of logging in this test.it can be vv till vvvvv)
+With command "forge test --vv" (vv stands for the visibility of logging in this test.)
+
+
+////////////// Advace deploy script 1 /////////////
+ Remember, in order to run a script, we are going to create run function.
+vm keyword in run function is related to is script in the nameing the function
+
+**** the command for running a script:  forge script script/DeployFundMe.s.sol
+
+
+////////////// Forked Tests ///////////////////////
+one of the most important part of our fundme contract is checking that is the funding works or not by checking out the getConversionRate()
+for that purpose we need to check that we're able to getVersion() from our AggregatorV3 or not.
+
+now test that if our priceFeed integrations are working or not.
+
+*******
+ if we want to run just a single test function, we can use :
+ forge test -m name_of_the_func
+
+
+!!!!!!!!!!!!!!!!!!!!!!!! 
+when we don't give a RPC_URL into test:
+remember when we run tests in foundry, when we don't specify a chain, foundry automatically spin up to anvil chain.
+and we making a call to contract address that doesn't exist. so obviously we're going to get an error.
+!!!!!!!!!!!!!!!!!!!!!!!!
+for solving this problem, we are going to talk about types of tests:
+
+1)Unit : Testing a specific part of our code
+
+2) Integration : Testing hoe our code works with other part of our code
+
+3) Forked : Testing our code on a simulated real environment 
+
+4) Staging : Testing our code in a real environment that is not prod.
+
+how to test our contract on an actual network?
+firstly create a " .env" file and put the network_RPC_URL in that then use:
+forge test -m testPriceFeedVersionIsAccurate --vvv --fork-url @network_RPS_URL 
+
+the downside of the doing this forks is you're going to make a lots of API calls to Alchemy nodes and it will run up your bll.
+
+so write test as many as you can without forking.
+
+//////////// 
+you can use the following command to see that how many lines of your code is tested.
+forge coverage --fork-url @network_RPC_URL
+////////////
+
 
 
