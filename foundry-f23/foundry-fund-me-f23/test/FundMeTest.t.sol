@@ -38,6 +38,12 @@ contract FundMeTest is Test {
         assertEq(fundMe.i_owner(), address(this));
     }
 
+    // function testPriceFeedVersionIsAccurate() public {
+    //     uint256 version = fundMe.getVersion();
+    //     assertEq(version, 4);
+    // } // with this function we get the EvmError: Revert !!!!!!!!!
+    // this is an unit test but one could argue that it is a integration test because iwe call the getVersion func and this func calls aout another contract
+
     //this codes are related to getting familiar with a test function.
     // uint256 number = 1;
 

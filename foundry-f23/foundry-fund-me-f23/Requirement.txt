@@ -85,5 +85,9 @@ you can use the following command to see that how many lines of your code is tes
 forge coverage --fork-url @network_RPC_URL
 ////////////
 
+what we really want to do is we want to make our test such that whenever we deploy our contracts we deploy them is a way that's modular with addresss or external system.
+// modular deployments
+//modular Testing
+
 
 
