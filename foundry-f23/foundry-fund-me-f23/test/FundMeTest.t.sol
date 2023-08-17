@@ -3,6 +3,7 @@
 pragma solidity ^0.8.18;
 import {Test, console} from "forge-std/Test.sol";
 import {FundMe} from "../src/FundMe.sol";
+import {DeployFundMe} from "../script/DeployFundMe.s.sol";
 
 contract FundMeTest is Test {
     FundMe fundMe; // making it as a stage variable till we can use it in the second function.abi
@@ -11,7 +12,9 @@ contract FundMeTest is Test {
         // we are calling the FundMeTest which then deploys FundMe
         // us -> FundMeTest -> FundMe
         //so the owner of the FundMe is FundMeTest not us
-        fundMe = new FundMe();
+        //fundMe = new FundMe();
+        DeployFundMe deployFundMe = new DeployFundMe();
+        fundMe = deployFundMe.run();
     }
 
     function testMinimumDollarIsFive() public {
@@ -35,7 +38,7 @@ contract FundMeTest is Test {
     //so the owner of the FundMe is FundMeTest not us
     // instead of msg.sender we must check the our address
     function testOwnerIsMsgSender() public {
-        assertEq(fundMe.i_owner(), address(this));
+        assertEq(fundMe.i_owner(), msg.sender);
     }
 
     // function testPriceFeedVersionIsAccurate() public {
