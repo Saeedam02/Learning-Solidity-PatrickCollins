@@ -96,3 +96,29 @@ what we really want to do is we want to make our test such that whenever we depl
 use :
 https://book.getfoundry.sh/reference/forge-std/std-cheats
 to create vm.prank and vm.deal and hoax function
+
+chisel is a shell that allows us to write solidity in our terminal and execute it.
+we just need to type chisel in the terminal.
+
+CMD+K or CTRL +k to clear the terminal.
+CTRL + C to exist 
+
+for knowing the amount of gas : use forge snapshot-m nameoftest
+it will create a .gas-snapshot file in the test folder and it will tell us how much exactly that test cost gas
+
+use txGasPrice cheat code and it will set the gas price for the rest of the transaction.
+gasleft() is a built in function in solidity which tells you how much gas is left in your transaction call.
+tx.gasprice is another built in function in solidity that tells us the current gas price.
+
+with the command:
+forge inspect FundMe storageLayout 
+we can see the exact layout of storage that our fundme contract has. we can see the slot of the different part of our contract.
+*** immutable variables didn't show up in storage .
+
+with cast storage the contract address slotnumber, we can see the exact address which is in that slot.
+
+Reading and writting from storage are really expensive operations.
+
+
+you can use :https://github.com/smartcontractkit/chainlink/blob/7d452615e277305dc41f468dd2a939de6e6c0424/contracts/STYLE.md  ->for solidity style Guid
+
