@@ -91,3 +91,8 @@ what we really want to do is we want to make our test such that whenever we depl
 
 
 
+////////////// lesson 7
+
+use :
+https://book.getfoundry.sh/reference/forge-std/std-cheats
+to create vm.prank and vm.deal and hoax function
