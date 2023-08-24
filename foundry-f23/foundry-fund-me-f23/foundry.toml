@@ -5,4 +5,6 @@ libs = ["lib"]
 remappings = [
     "@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
 ]
+#  try to keep the following command off as you can as possible
+##ffi = true # allow foundry to run commands directly on uor machine
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
