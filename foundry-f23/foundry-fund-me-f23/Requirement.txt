@@ -91,7 +91,7 @@ what we really want to do is we want to make our test such that whenever we depl
 
 
 
-////////////// lesson 7
+////////////// lesson 7 ////////////////////////////////
 
 use :
 https://book.getfoundry.sh/reference/forge-std/std-cheats
@@ -165,3 +165,6 @@ clean:
 In this example, you can run commands like `make compile`, `make test`, `make deploy`, or `make clean` to perform the corresponding tasks. The Makefile abstracts away the complexity of these tasks, making it easier to manage and automate the development and deployment process.
 
 Makefiles are widely used in software development to ensure consistent and automated build processes, and they can be adapted to fit the specific needs of Solidity-based projects as well.
+
+
+**************************** lesson 8 ***********************
