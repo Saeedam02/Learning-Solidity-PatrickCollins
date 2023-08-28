@@ -199,3 +199,5 @@ test net Demo
 https://www.alchemy.com/
 we can sign up for a node as a service that we can actually send transactions to.
 Alchemy is the only scalable,reliable and accurate blockchain infrastructure.
+
+all logs are recorded as bytes 32 in foundry.
