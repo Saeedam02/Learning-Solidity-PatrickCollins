@@ -155,6 +155,6 @@ blockchain/history
 yarn.lock
 package-lock.json
 
-makefile
+Makefile
 
 # End of https://www.toptal.com/developers/gitignore/api/solidity,soliditytruffle
